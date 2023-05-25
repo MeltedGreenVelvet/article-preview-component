@@ -136,6 +136,7 @@ body {
     margin: rem-calc(36px) rem-calc(32px) rem-calc(20px) rem-calc(32px);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .card-author {
@@ -159,7 +160,15 @@ body {
 }
 
 .card-footer {
-    display: none;
+    opacity: 0;
+    display: flex;
+    position: absolute; 
+    bottom: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.card-footer.visible {
+    opacity: 1;
 }
 
 
@@ -186,7 +195,6 @@ IMAGES
     width: rem-calc(32px);
     height: rem-calc(32px);
 }
-
 
 /*
 ---------------------
