@@ -1,0 +1,210 @@
+/*
+---------------------
+UNIT CONVERSION FUNCTIONS
+---------------------
+*/
+
+
+@use "sass:math";
+
+//Function to convert values to rem.
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@function convert-to-rem($value, $base-value: $rem-base)  {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if ($value == 0rem) { 
+        $value: 0;
+     } // Turn 0rem into 0
+    @return $value;
+}
+
+@function rem-calc($values, $base-value: $rem-base) {
+    $max: length($values);
+    @if $max == 1 { 
+        @return convert-to-rem(nth($values, 1), $base-value); 
+    }
+    $remValues: ();
+    @for $i from 1 through $max {
+        $remValues: append($remValues, convert-to-rem(nth($values, $i), $base-value));
+    }
+    @return $remValues;
+}
+
+
+/*
+---------------------
+VARS
+---------------------
+*/
+
+$very-dark-grayish-blue: #303F47;
+$desaturated-dark-blue: #48556A;
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: #ECF2F8;
+$rem-base: 13px;
+$font-family: 'Manrope', sans-serif;
+$font-weight: 500;
+$bold-font-weight: 700;
+
+/*
+---------------------
+TYPOGRAPHY
+---------------------
+*/
+
+html {
+    font-size: $rem-base;
+}
+
+body {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 1rem;
+}
+
+.card-title {
+    font-size: rem-calc(16px);
+    font-weight: $bold-font-weight;
+    line-height: rem-calc(24px);
+    letter-spacing: rem-calc(.2px);
+    font-family: $font-family;
+    color: $desaturated-dark-blue;
+    margin-bottom: rem-calc(12px);
+    order: 1;
+}
+
+.card-description {
+    order: 2;
+    color: $grayish-blue;
+    font-size: 1rem;
+    line-height: rem-calc(20px);
+    letter-spacing: 0.121875px;
+}
+
+.card-footer {
+    order: 4;
+}
+
+.align-author-txt {
+    font-weight: $bold-font-weight;
+    font-size: 1rem;
+    line-height: rem-calc(20px);
+    letter-spacing: 0.121875px;
+    color: $desaturated-dark-blue;
+}
+
+.card-date {
+    font-size: 1rem;
+    line-height: rem-calc(20px);
+    letter-spacing: 0.121875px;
+    color: #9DAEC2;
+    font-weight: $font-weight;
+}
+
+/*
+---------------------
+MOBILE LAYOUT
+---------------------
+*/
+
+* {
+    box-sizing: border-box;
+}
+   
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $light-grayish-blue;
+}
+
+.container {
+    width: rem-calc(327px);
+    margin: 0 auto;
+    border-radius: rem-calc(10px);
+    box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+    background-color: white;
+}
+
+.card-content {
+    margin: rem-calc(36px) rem-calc(32px) rem-calc(20px) rem-calc(32px);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-author {
+    order: 3;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: rem-calc(32px);
+}
+
+.card-author-align {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.align-author-txt{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    display: none;
+}
+
+
+/*
+---------------------
+IMAGES
+---------------------
+*/
+
+.drawers-img {
+    width: 100%;
+    height: rem-calc(200px);
+    border-radius: rem-calc(10px) rem-calc(10px) 0 0;
+}
+
+.card-author-img {
+    width: rem-calc(40px);
+    height: rem-calc(40px);
+    border-radius: 50%;
+    margin-right: rem-calc(16px);
+}
+
+.share-icon {
+    width: rem-calc(32px);
+    height: rem-calc(32px);
+}
+
+
+/*
+---------------------
+FOOTER
+---------------------
+*/
+
+.attribution { 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    text-align: center;
+    font-size: rem-calc(11px);
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.attribution a { 
+    color: $grayish-blue; 
+}

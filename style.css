@@ -1,0 +1,164 @@
+/*
+---------------------
+UNIT CONVERSION FUNCTIONS
+---------------------
+*/
+/*
+---------------------
+VARS
+---------------------
+*/
+/*
+---------------------
+TYPOGRAPHY
+---------------------
+*/
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.card-title {
+  font-size: 1.2307692308rem;
+  font-weight: 700;
+  line-height: 1.8461538462rem;
+  letter-spacing: 0.0153846154rem;
+  font-family: "Manrope", sans-serif;
+  color: #48556A;
+  margin-bottom: 0.9230769231rem;
+  order: 1;
+}
+
+.card-description {
+  order: 2;
+  color: hsl(212, 23%, 69%);
+  font-size: 1rem;
+  line-height: 1.5384615385rem;
+  letter-spacing: 0.121875px;
+}
+
+.card-footer {
+  order: 4;
+}
+
+.align-author-txt {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5384615385rem;
+  letter-spacing: 0.121875px;
+  color: #48556A;
+}
+
+.card-date {
+  font-size: 1rem;
+  line-height: 1.5384615385rem;
+  letter-spacing: 0.121875px;
+  color: #9DAEC2;
+  font-weight: 500;
+}
+
+/*
+---------------------
+MOBILE LAYOUT
+---------------------
+*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ECF2F8;
+}
+
+.container {
+  width: 25.1538461538rem;
+  margin: 0 auto;
+  border-radius: 0.7692307692rem;
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+  background-color: white;
+}
+
+.card-content {
+  margin: 2.7692307692rem 2.4615384615rem 1.5384615385rem 2.4615384615rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-author {
+  order: 3;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 2.4615384615rem;
+}
+
+.card-author-align {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.align-author-txt {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-footer {
+  display: none;
+}
+
+/*
+---------------------
+IMAGES
+---------------------
+*/
+.drawers-img {
+  width: 100%;
+  height: 15.3846153846rem;
+  border-radius: 0.7692307692rem 0.7692307692rem 0 0;
+}
+
+.card-author-img {
+  width: 3.0769230769rem;
+  height: 3.0769230769rem;
+  border-radius: 50%;
+  margin-right: 1.2307692308rem;
+}
+
+.share-icon {
+  width: 2.4615384615rem;
+  height: 2.4615384615rem;
+}
+
+/*
+---------------------
+FOOTER
+---------------------
+*/
+.attribution {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  text-align: center;
+  font-size: 0.8461538462rem;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.attribution a {
+  color: hsl(212, 23%, 69%);
+}/*# sourceMappingURL=style.css.map */
