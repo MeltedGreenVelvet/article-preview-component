@@ -103,6 +103,16 @@ body {
     font-weight: $font-weight;
 }
 
+.footer-share-text {
+    font-size: 1rem;
+    line-height: rem-calc(20px);
+    letter-spacing: 5px;
+    color: $grayish-blue;
+    font-weight: $font-weight;
+    display: inline;
+    text-transform: uppercase;
+}
+
 /*
 ---------------------
 MOBILE LAYOUT
@@ -161,7 +171,16 @@ body {
 
 .card-footer {
     opacity: 0;
+    background-color: $desaturated-dark-blue;
+    min-width: rem-calc(327px);
+    height: rem-calc(64px);
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: rem-calc(32px);
+    margin-left: rem-calc(-32px);
+    margin-bottom: rem-calc(-20px);
+    border-radius: 0 0 rem-calc(10px) rem-calc(10px);
     position: absolute; 
     bottom: 0;
     transition: opacity 0.5s ease-out;
@@ -169,6 +188,15 @@ body {
 
 .card-footer.visible {
     opacity: 1;
+}
+
+.card-share {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: rem-calc(175px);
+    margin-left: rem-calc(32px);
 }
 
 
@@ -191,9 +219,19 @@ IMAGES
     margin-right: rem-calc(16px);
 }
 
-.share-icon {
+.card-share-btn,
+.card-share-back-btn {
+    all: unset;
     width: rem-calc(32px);
     height: rem-calc(32px);
+    position: relative;
+}
+
+.share-icon {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    cursor: pointer;
 }
 
 /*

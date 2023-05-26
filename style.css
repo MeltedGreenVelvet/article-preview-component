@@ -62,6 +62,16 @@ body {
   font-weight: 500;
 }
 
+.footer-share-text {
+  font-size: 1rem;
+  line-height: 1.5384615385rem;
+  letter-spacing: 5px;
+  color: hsl(212, 23%, 69%);
+  font-weight: 500;
+  display: inline;
+  text-transform: uppercase;
+}
+
 /*
 ---------------------
 MOBILE LAYOUT
@@ -119,7 +129,16 @@ body {
 
 .card-footer {
   opacity: 0;
+  background-color: #48556A;
+  min-width: 25.1538461538rem;
+  height: 4.9230769231rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4615384615rem;
+  margin-left: -2.4615384615rem;
+  margin-bottom: -1.5384615385rem;
+  border-radius: 0 0 0.7692307692rem 0.7692307692rem;
   position: absolute;
   bottom: 0;
   transition: opacity 0.5s ease-out;
@@ -127,6 +146,15 @@ body {
 
 .card-footer.visible {
   opacity: 1;
+}
+
+.card-share {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 13.4615384615rem;
+  margin-left: 2.4615384615rem;
 }
 
 /*
@@ -147,9 +175,19 @@ IMAGES
   margin-right: 1.2307692308rem;
 }
 
-.share-icon {
+.card-share-btn,
+.card-share-back-btn {
+  all: unset;
   width: 2.4615384615rem;
   height: 2.4615384615rem;
+  position: relative;
+}
+
+.share-icon {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  cursor: pointer;
 }
 
 /*
