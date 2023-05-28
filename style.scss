@@ -180,6 +180,7 @@ body {
     margin-top: rem-calc(32px);
     margin-left: rem-calc(-32px);
     margin-bottom: rem-calc(-20px);
+    padding: rem-calc(16px) rem-calc(32px) rem-calc(16px) rem-calc(0);
     border-radius: 0 0 rem-calc(10px) rem-calc(10px);
     position: absolute; 
     bottom: 0;
@@ -222,8 +223,8 @@ IMAGES
 .card-share-btn,
 .card-share-back-btn {
     all: unset;
-    width: rem-calc(32px);
-    height: rem-calc(32px);
+    min-width: rem-calc(32px);
+    min-height: rem-calc(32px);
     position: relative;
 }
 
@@ -253,4 +254,40 @@ FOOTER
 
 .attribution a { 
     color: $grayish-blue; 
+}
+
+
+/*
+---------------------
+MEDIA QUERY - DESKTOP
+---------------------
+*/
+
+@media(min-width: 1000px){
+
+    .container {
+        width: rem-calc(730px);
+        height: rem-calc(280px);
+    }
+
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .drawers-img {
+        width: rem-calc(285px);
+        height: rem-calc(280px);
+        border-radius: rem-calc(10px) 0 0 rem-calc(10px);
+        object-fit: cover;
+        object-position: left;
+    }
+
+    .card-content {
+        width: rem-calc(445px);
+    }
+
+    .card-title {
+        font-size: rem-calc(20px);
+    }
 }
